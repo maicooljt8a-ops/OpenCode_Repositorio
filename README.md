@@ -14,15 +14,41 @@ Programa de clasificación de cobertura terrestre y detección de cambios tempor
 
 ```
 src/
-├── 00_config.py                 # Configuración centralizada
-├── 01_descarga_datos.py         # Descarga Sentinel-2 y Dynamic World
-├── 02_preprocesamiento.py       # Cloud masking y composición anual
-├── 03_clasificacion_prithvi.py  # Clasificación con Prithvi-EO-2.0
-├── 04_deteccion_cambios.py      # Detección de cambios temporales
-├── 05_metricas_validacion.py    # Validación contra Dynamic World
-├── 06_visualizacion.py          # Mapas y figuras
-└── 07_exportar_resultados.py    # Exportación final
+├── 00_config.py                    # Configuración centralizada
+├── 01_descarga_datos.py            # Descarga Sentinel-2 y Dynamic World
+├── 02_preprocesamiento.py          # Cloud masking y composición anual
+├── 03_clasificacion_prithvi.py     # Clasificación con Prithvi-EO-2.0
+├── 04_deteccion_cambios.py         # Detección de cambios temporales
+├── 05_metricas_validacion.py       # Validación contra Dynamic World
+├── 06_visualizacion.py             # Mapas y figuras
+├── 07_exportar_resultados.py       # Exportación final
+└── 08_generar_ejemplo_sintetico.py # Visualizaciones de ejemplo (datos sintéticos)
 ```
+
+## Visualizaciones de Ejemplo (DATOS SINTÉTICOS)
+
+> **ADVERTENCIA:** Las siguientes imágenes fueron generadas con datos sintéticos para demostrar el pipeline visual. NO representan la cobertura real del Quindío.
+
+### 1. Mapa de Cobertura por Año
+
+![Cobertura 2018](outputs/ejemplo_sintetico/01_mapa_cobertura_2018.png)
+![Cobertura 2025](outputs/ejemplo_sintetico/01_mapa_cobertura_2025.png)
+
+### 2. Mapa de Cambios entre Fechas
+
+![Mapa de cambios](outputs/ejemplo_sintetico/02_mapa_cambios.png)
+
+### 3. Área por Clase en Cada Año
+
+![Barras de área](outputs/ejemplo_sintetico/03_barras_area_clase.png)
+
+### 4. Matriz de Transición (Mapa de Calor)
+
+![Matriz de transición](outputs/ejemplo_sintetico/04_matriz_transicion.png)
+
+### 5. Layout Final Cartográfico
+
+![Layout final](outputs/ejemplo_sintetico/05_layout_final_cartografico.png)
 
 ## Configuración
 

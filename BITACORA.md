@@ -98,6 +98,46 @@
 - `README.md`: documentacion del proyecto
 - `config.yaml`: plantilla de configuracion sin credenciales
 
+**Errores y soluciones:**
+- Error de sintaxis en `00_config.py` línea 64: f-string usaba `||` en vez de `or`. Corregido.
+- `git commit` fallo por falta de identidad git. Resuelto con variables de entorno GIT_AUTHOR_NAME/EMAIL.
+- `git push` fallo: repositorio remoto `https://github.com/maicoltas/Repositorio_Clase7.git` no existe. Pendiente de creacion.
+
+**Verificacion:**
+- Sintaxis de los 8 modulos Python verificada con `python -m py_compile` — todos OK.
+
+---
+
+### Etapa 2: Instalación de dependencias y visualizaciones sintéticas (2026-10-10)
+
+**Acciones:**
+1. Instaladas dependencias en `.venv`: `rasterio 1.5.2`, `tqdm 4.70.1`, `earthengine-api 1.7.47`, `geemap 0.38.9`, `geopandas 1.2.0`, `pyyaml 6.0.3`
+2. Verificado que `torch`, `terratorch`, `torchgeo` NO están instalados (se instalan cuando se requiera entrenamiento)
+3. Creado `src/__init__.py` (vacío) y `src/config.py` (re-exporta `00_config.py`)
+4. Creado `src/08_generar_ejemplo_sintetico.py` para generar visualizaciones de ejemplo
+5. Generadas 12 imágenes PNG en `outputs/ejemplo_sintetico/`:
+   - 8 mapas de cobertura anual (2018-2025)
+   - 1 mapa de cambios
+   - 1 gráfico de barras de área por clase
+   - 1 matriz de transición como mapa de calor
+   - 1 layout final cartográfico
+6. Actualizado `README.md` con las imágenes sintéticas
+
+**Decisiones:**
+- Todas las imágenes sintéticas llevan la etiqueta visible "DATOS SINTETICOS - NO REPRESENTA COBERTURA REAL"
+- Las imágenes se guardan en `outputs/ejemplo_sintetico/` para no mezclar con resultados reales
+- El script `08_generar_ejemplo_sintetico.py` usa `numpy.random.default_rng(42)` para reproducibilidad
+
+**Errores y soluciones:**
+- `ModuleNotFoundError: No module named 'src.config'` → Creado `src/__init__.py` y `src/config.py`
+- `SyntaxError: invalid decimal literal` al importar `src.00_config` → Usado `importlib.util.spec_from_file_location` para cargar módulo que empieza con dígito
+- `rasterio` no instalado → Instalado con pip
+
+**Pendiente del estudiante:**
+1. Autenticar Earth Engine: `earthengine authenticate`
+2. Definir variable de entorno: `$env:EE_PROJECT = "tu-proyecto-ee"`
+3. Cuando esté listo, se ejecutará el pipeline con datos reales
+
 ---
 
 *(La bitácora se actualiza al final de cada etapa)*
