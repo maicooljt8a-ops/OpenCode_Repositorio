@@ -158,6 +158,8 @@ fatal: unable access 'https://github.com/maicooljt8a-ops/OpenCode_Repositorio.gi
 
 **Pendiente del estudiante:** Verificar que el token incluya scope `repo` y que el repositorio exista.
 
+**Segundo intento (2026-10-10):** Error 403 identico. Token sin permisos de escritura.
+
 ---
 
 *(La bitácora se actualiza al final de cada etapa)*
