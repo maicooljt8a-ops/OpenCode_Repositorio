@@ -140,5 +140,25 @@
 
 ---
 
+### Etapa 3: Intento de push a GitHub (2026-10-10)
+
+**Acciones:**
+1. Actualizado remote origin a `https://github.com/maicooljt8a-ops/OpenCode_Repositorio.git`
+2. Intentado push con token proporcionado por el estudiante
+
+**Error exacto:**
+```
+remote: Permission to maicooljt8a-ops/OpenCode_Repositorio.git denied to maicooljt8a-ops.
+fatal: unable access 'https://github.com/maicooljt8a-ops/OpenCode_Repositorio.git/': The requested URL returned error: 403
+```
+
+**Diagnostico:** El token no tiene permiso de escritura sobre el repositorio (falta scope `repo` o el repositorio no existe en la cuenta).
+
+**Accion correctiva:** Remoto revertido a URL sin credenciales.
+
+**Pendiente del estudiante:** Verificar que el token incluya scope `repo` y que el repositorio exista.
+
+---
+
 *(La bitácora se actualiza al final de cada etapa)*
 
