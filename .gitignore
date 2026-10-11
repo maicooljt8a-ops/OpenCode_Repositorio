@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+dist/
+build/
+.env
+config.yaml
+data/raw/*.tif
+data/raw/*.tfrecord
+data/processed/*.pt
+data/processed/*.pth
+outputs/*.html
+outputs/*.tif
+.ipynb_checkpoints/
+*.log
