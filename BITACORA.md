@@ -172,6 +172,13 @@ fatal: unable access 'https://github.com/maicooljt8a-ops/OpenCode_Repositorio.gi
 - Diagnostico: el rechazo es del servidor GitHub, no del credential helper de Windows
 - Hipotesis restantes: proteccion de rama main, token revocado, o bloqueo de organizacion
 
+**Quinto intento - EXITOSO (2026-10-11):**
+- Verificacion curl: `X-OAuth-Scopes: repo`, HTTP 200
+- Push realizado con token nuevo proporcionado por el estudiante
+- Comando: `git -c credential.helper= push https://x-access-token:TOKEN@github.com/maicooljt8a-ops/OpenCode_Repositorio.git main`
+- Resultado: `[new branch] main -> main`
+- Proyecto completo subido a GitHub
+
 ---
 
 *(La bitácora se actualiza al final de cada etapa)*
