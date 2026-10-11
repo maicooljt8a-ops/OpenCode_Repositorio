@@ -166,6 +166,12 @@ fatal: unable access 'https://github.com/maicooljt8a-ops/OpenCode_Repositorio.gi
 - Diagnostico: posible proteccion de rama `main` o restricciones de organizacion
 - Pendiente del estudiante: revisar Settings > Branches > Branch protection rules
 
+**Cuarto intento con Basic auth (2026-10-10):**
+- Comando: `git -c credential.helper= -c http.extraheader="AUTHORIZATION: basic ..." push`
+- Error identico 403: Permission denied
+- Diagnostico: el rechazo es del servidor GitHub, no del credential helper de Windows
+- Hipotesis restantes: proteccion de rama main, token revocado, o bloqueo de organizacion
+
 ---
 
 *(La bitácora se actualiza al final de cada etapa)*
