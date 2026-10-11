@@ -61,7 +61,7 @@ def validar_configuracion():
 if __name__ == "__main__":
     print("=== Configuracion del proyecto - Quindio ===")
     print(f"Raiz: {BASE_DIR}")
-    print(f"Proyecto EE: {EE_PROJECT || '(no definido)'}")
+    print(f"Proyecto EE: {EE_PROJECT or '(no definido)'}")
     print(f"Zona: {rectangulo_zona()}")
     print(f"Anios: {ANIOS[0]}-{ANIOS[-1]}")
     print(f"Municipios: {len(MUNICIPIOS_QUINDIO)}")
